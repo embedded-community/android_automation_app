@@ -4,19 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/clearAllButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
         android:text="@string/unpair_all"
-        app:layout_constraintBottom_toTopOf="@+id/bl_devices_text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,11 +24,74 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clearAllButton" />
+        app:layout_constraintTop_toBottomOf="@+id/clearAllButton"
+        app:layout_constraintVertical_bias="0.114" />
+
+    <RelativeLayout
+        android:id="@+id/pairedDevicesLayout"
+        android:layout_width="178dp"
+        android:layout_height="365dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bl_devices_text"
+        tools:text="@tools:sample/lorem">
+        <TextView
+            android:id="@+id/connectedDevicesTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paired Devices"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ListView
+            android:id="@+id/pairedDevices"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/connectedDevicesTitle"
+            android:layout_marginTop="0dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/unpairedDevicesLayout"
+        android:layout_width="178dp"
+        android:layout_height="365dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pairedDevicesLayout"
+        app:layout_constraintTop_toBottomOf="@+id/bl_devices_text">
+
+        <TextView
+            android:id="@+id/disconnectedDevicesTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Unpaired Devices"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ListView
+            android:id="@+id/unpairedDevices"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/disconnectedDevicesTitle" />
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
