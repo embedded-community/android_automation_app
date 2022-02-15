@@ -2,7 +2,11 @@
 Simple app that will remove all bluetooth pairings with a push of a button or from command line using `adb`
 <br><br/>
 ## Building and installation for Android 11 or lower
-Application can be installed by building it in Android Studio or from command line
+Application can be installed
+- by downloading [Latest Release](https://github.com/embedded-community/android_automation_app/releases/latest)
+- Building it locally with Android Studio
+- Building it on command line
+<br><br/>
 
 Building from command line. This will build and install the application to connected device
 ```bash
@@ -16,9 +20,14 @@ Build application without installing
 > BUILD SUCCESSFUL
 ```
 
-Both command will build application. Built `.apk` is located in
+Both commands above will build application. Built `.apk` is located in
 ```bash
 app/build/outputs/apk/debug/app-debug.apk
+```
+
+Using `-g` is recomended. It will give all the run time permissions without user interaction on the app
+```bash
+adb install -g path/to/apk
 ```
 <br><br/>
 ## Building and installation for Android 12
