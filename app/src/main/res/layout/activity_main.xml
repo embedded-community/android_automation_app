@@ -40,18 +40,21 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="84dp"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/constraint_layout_style"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/unpairedDevicesLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bl_devices_text"
-        tools:text="@tools:sample/lorem">
+        app:layout_constraintTop_toBottomOf="@+id/bl_devices_text">
+
         <TextView
             android:id="@+id/connectedDevicesTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="Paired Devices"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -60,17 +63,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/connectedDevicesTitle"
-            android:layout_marginTop="0dp" />
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            tools:ignore="DuplicateSpeakableTextCheck" />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/unpairedDevicesLayout"
         android:layout_width="178dp"
         android:layout_height="365dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="84dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/constraint_layout_style"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
@@ -78,12 +84,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pairedDevicesLayout"
-        app:layout_constraintTop_toBottomOf="@+id/bl_devices_text">
+        app:layout_constraintTop_toBottomOf="@+id/bl_devices_text">>
 
         <TextView
             android:id="@+id/disconnectedDevicesTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="Unpaired Devices"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -91,7 +98,8 @@
             android:id="@+id/unpairedDevices"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/disconnectedDevicesTitle" />
+            android:layout_below="@+id/disconnectedDevicesTitle"
+            android:gravity="center" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
